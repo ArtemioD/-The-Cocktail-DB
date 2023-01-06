@@ -7,16 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.artemiod.thecocktaildb.R
-import com.artemiod.thecocktaildb.data.model.Cocktail
+import com.artemiod.thecocktaildb.data.model.Drink
 
 class DetailFragment : Fragment() {
 
-    private lateinit var cocktail: Cocktail
+    private lateinit var cocktail: Drink
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requireArguments().let {
-            cocktail = it.getParcelable<Cocktail>("cocktail") ?: Cocktail()
+            cocktail = it.getParcelable<Drink>("cocktail") ?: Drink()
             Log.d("TAG", "$cocktail")
         }
     }

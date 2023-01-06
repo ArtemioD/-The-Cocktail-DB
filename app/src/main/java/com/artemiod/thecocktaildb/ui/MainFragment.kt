@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.artemiod.thecocktaildb.R
 import com.artemiod.thecocktaildb.data.DataSource
-import com.artemiod.thecocktaildb.data.model.Cocktail
+import com.artemiod.thecocktaildb.data.model.Drink
 import com.artemiod.thecocktaildb.databinding.FragmentMainBinding
 import com.artemiod.thecocktaildb.domain.RepositoryImplement
 import com.artemiod.thecocktaildb.ui.viewmodel.MainViewModel
@@ -64,7 +64,7 @@ class MainFragment : Fragment(), OnCocktailClickListener {
         //binding.rvCocktails.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
     }
 
-    override fun onCocktailClick(cocktail: Cocktail) {
+    override fun onCocktailClick(cocktail: Drink) {
         val bundle = Bundle()
         bundle.putParcelable("cocktail", cocktail)
         findNavController().navigate(R.id.detailFragment, bundle)

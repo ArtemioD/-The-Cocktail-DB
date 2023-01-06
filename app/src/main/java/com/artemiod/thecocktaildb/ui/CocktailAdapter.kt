@@ -1,22 +1,21 @@
 package com.artemiod.thecocktaildb.ui
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.artemiod.thecocktaildb.R
-import com.artemiod.thecocktaildb.data.model.Cocktail
+import com.artemiod.thecocktaildb.data.model.Drink
 import com.artemiod.thecocktaildb.databinding.ItemListBinding
 import com.bumptech.glide.Glide
 
 // interface para hacer click
 interface OnCocktailClickListener {
-    fun onCocktailClick(cocktail: Cocktail)
+    fun onCocktailClick(cocktail: Drink)
 }
 
 class CocktailAdapter(
-    private val cocktailsList: List<Cocktail>,
+    private val cocktailsList: List<Drink>,
     private val itemClickListener: OnCocktailClickListener,
 ) : RecyclerView.Adapter<CocktailAdapter.ViewHolder>() {
 
@@ -24,7 +23,7 @@ class CocktailAdapter(
 
         private val binding = ItemListBinding.bind(view)
 
-        fun bind(cocktail: Cocktail) {
+        fun bind(cocktail: Drink) {
             Glide.with(view.context).load(cocktail.img).into(binding.ivImgCocktail)
             binding.tvName.text = cocktail.name
             binding.tvDescription.text = cocktail.description
